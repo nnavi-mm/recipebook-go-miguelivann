@@ -3,13 +3,13 @@
     <title>{% block title %}Recipe Book{% endblock %}</title>
     <h1> Recipe Book </h1>
     {% if request.user.is_authenticated %}
-        <form method="POST" action="{% url 'accounts/login' %}">
+        <form method="POST" action="{% url 'logout' %}">
             {% csrf_token %}
             {{ form.as_p }}
             <button type="submit">Logout</button>
         </form>
     {% else %}
-    <a href="{% url 'accounts/login' %}">Login</a>
+    <a href="{% url 'login' %}">Login</a>
     {% endif %}
     {% block styles %}{% endblock %}
 </head>
