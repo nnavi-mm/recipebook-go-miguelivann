@@ -8,9 +8,9 @@ from .models import Recipe
 
 class IndividRecipeView(DetailView):
     model = Recipe
-    template_name = 'recipe.html'
+    template_name = 'ledger/recipe.html'
 
 
 class MainListView(ListView):
     model = Recipe
-    template_name = 'list.html'
+    template_name = 'ledger/list.html'
