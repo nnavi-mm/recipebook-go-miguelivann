@@ -1,0 +1,7 @@
+{% block content %}
+   <form method="POST" action="{% url 'recipes/list' %}">
+       {% csrf_token %}
+       {{ form.as_p }}
+       <button type="submit">Login</button>
+   </form>
+{% endblock %}
