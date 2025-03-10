@@ -26,19 +26,18 @@ class RecipeAdmin(admin.ModelAdmin):
 
 class RecipeIngredientAdmin(admin.ModelAdmin):
     model = RecipeIngredient
-    search_fields = ('ingredient','recipe',)
-    list_display = ('ingredient', 'recipe',)
-    list_filter = ('ingredient','recipe',)
+    search_fields = ('ingredient', 'recipe', )
+    list_display = ('ingredient', 'recipe', )
+    list_filter = ('ingredient', 'recipe', )
     fieldsets = [
-        ('Details',{
-            'fields':[
+        ('Details', {
+            'fields': [
                 'quantity', ('ingredient', 'recipe'),
             ]
         }),
     ]
 
 
-
 admin.site.register(Ingredient, IngredientAdmin)
 admin.site.register(Recipe, RecipeAdmin)
-admin.site.register(RecipeIngredient,RecipeIngredientAdmin)
+admin.site.register(RecipeIngredient, RecipeIngredientAdmin)
