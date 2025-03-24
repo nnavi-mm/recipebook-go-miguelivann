@@ -24,6 +24,20 @@ class Recipe(models.Model):
 
     def get_absolute_url(self):
         return reverse('ledger:recipe', args=[self.pk])
+    
+
+class RecipeImage(models.Model):
+    image = models.ImageField(null = True, upload_to='images/')
+    description = models.CharField(max_length=255)
+    recipe = models.ForeignKey(
+            Recipe,
+            on_delete=models.SET_NULL,
+            null=True,
+            related_name="image"
+            )
+
+    def __str__(self):
+        return self.image
 
 
 class RecipeIngredient(models.Model):
