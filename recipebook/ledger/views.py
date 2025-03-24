@@ -23,5 +23,5 @@ class MainListView(ListView):
 class RecipeAddView(LoginRequiredMixin,CreateView):
     model = Recipe
     form_class = RecipeForm
-    template_name = 'ledger/list.html'
+    template_name = 'ledger/recipe_add.html'
     redirect_field_name = '/accounts/login'

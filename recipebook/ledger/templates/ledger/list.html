@@ -11,12 +11,7 @@
     {% endfor %}
 </ul>
 <br>
-<a href='recipe/add'>Add a Recipe</a>
-<form method = "POST" enctype = "multipart/form-date" action = "{% url 'ledger:list' %}">
-  {% csrf_token %}
-  {{form}}
-  <button type = "submit">Submit</button>
-</form>
+<a href="{% url 'ledger:recipe-add' %}">Add a Recipe</a>
 
 
 {% endblock %}
