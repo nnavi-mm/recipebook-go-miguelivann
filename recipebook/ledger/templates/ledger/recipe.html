@@ -8,6 +8,11 @@
 <i>by {{recipe.author}} <i>
 
 
+{% if object.task_image %}
+<img src = "{{object.image.url}}" alt="">
+{% endif %}
+
+
 <h3> Ingredients </h3>
 
 

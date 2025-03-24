@@ -10,6 +10,13 @@
       <li><a href='{{ recipe.get_absolute_url }}'>{{recipe.name}}</a></li>
     {% endfor %}
 </ul>
+<br>
+<a href='recipe/add'>Add a Recipe</a>
+<form method = "POST" enctype = "multipart/form-date" action = "{% url 'ledger:list' %}">
+  {% csrf_token %}
+  {{form}}
+  <button type = "submit">Submit</button>
+</form>
 
 
 {% endblock %}
