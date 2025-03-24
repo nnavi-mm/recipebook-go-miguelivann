@@ -1,11 +1,15 @@
 from django.contrib import admin
-from .models import Ingredient, Recipe, RecipeIngredient
+from .models import Ingredient, Recipe, RecipeIngredient, RecipeImage
 
 # Register your models here.
 
 
 class RecipeIngredientInLine(admin.TabularInline):
     model = RecipeIngredient
+
+
+class RecipeImageInLine(admin.TabularInline):
+    model = RecipeImage
 
 
 class IngredientAdmin(admin.ModelAdmin):
@@ -18,9 +22,9 @@ class IngredientAdmin(admin.ModelAdmin):
 
 class RecipeAdmin(admin.ModelAdmin):
     model = Recipe
-    inlines = [RecipeIngredientInLine]
-    search_fields = ('name', 'author', 'created_on', 'updated_on',)
-    list_display = ('name', 'author', 'created_on', 'updated_on',)
+    inlines = [RecipeImageInLine, RecipeIngredientInLine]
+    search_fields = ('name', 'author', 'created_on', 'updated_on', )
+    list_display = ('name', 'author', 'created_on', 'updated_on', )
     list_filter = ('name', 'author', 'created_on', 'updated_on', )
 
 

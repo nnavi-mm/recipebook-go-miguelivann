@@ -124,6 +124,8 @@ STATIC_ROOT = [os.path.join(BASE_DIR, 'static')]
 STATICFILES_DIRS = [
 BASE_DIR/'static',
 ]
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR/'media'
 LOGIN_REDIRECT_URL = '/recipes/list'
 LOGOUT_REDIRECT_URL = '/accounts/login'
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
