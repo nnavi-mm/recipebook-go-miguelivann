@@ -38,3 +38,8 @@ class ImageAddView(CreateView):
 
     def get_success_url(self):
         return reverse_lazy('ledger:recipe', kwargs={'pk': self.kwargs['pk']})
+    
+    def get_context_data(self, **kwargs):
+        ctx = super().get_context_data(**kwargs)
+        ctx['return'] = (Recipe.objects.get(pk=self.kwargs['pk'])).get_absolute_url()
+        return ctx

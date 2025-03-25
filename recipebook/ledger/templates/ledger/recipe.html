@@ -9,6 +9,7 @@
 
 {% if object.image.all %}
     {% for image in object.image.all %}
+    <br>
         <img src = "{{image.image.url}}" alt="{{image.description}}">
     {% endfor %}
 {% endif %}
