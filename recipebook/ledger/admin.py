@@ -10,13 +10,14 @@ class RecipeIngredientInLine(admin.TabularInline):
 
 class RecipeImageInLine(admin.TabularInline):
     model = RecipeImage
+    can_delete = True
 
 
 class IngredientAdmin(admin.ModelAdmin):
     model = Ingredient
     inlines = [RecipeIngredientInLine]
     search_fields = ('name', )
-    list_display = ('name',)
+    list_display = ('name', )
     list_filter = ('name', )
 
 

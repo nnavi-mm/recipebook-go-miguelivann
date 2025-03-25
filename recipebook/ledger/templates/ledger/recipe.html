@@ -7,9 +7,10 @@
 <h2> {{recipe.name}} </h2>
 <i>by {{recipe.author}} <i>
 
-
-{% if object.task_image %}
-<img src = "{{object.image.url}}" alt="">
+{% if object.image.all %}
+    {% for image in object.image.all %}
+        <img src = "{{image.image.url}}" alt="{{image.description}}">
+    {% endfor %}
 {% endif %}
 
 
@@ -21,6 +22,8 @@
         <li> {{ingredient.ingredient.name}} ({{ingredient.quantity}})</li>
     {% endfor %}
 </ul>
+<br>
+<a href="{{object.get_absolute_url}}/add_image">Add an Image</a>
 
 
 {% endblock %}
